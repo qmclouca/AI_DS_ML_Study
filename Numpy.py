@@ -54,3 +54,40 @@ print("matriz aleatoria: ")
 print(mtzAleatoria) 
 print("matriz aleatoria transposta: ")
 print(mtzAleatoria_transposta) #printa array transposto
+
+arr = np.arange(0, 30, 3)
+
+print(arr[3:5]) #retorna elementos 3 e 4
+print(arr[3:]) #retorna elementos a partir do 3
+print(arr[:3]) #retorna elementos ate o 3
+
+arr2 = np.arange(50).reshape((5, 10)) #cria matriz 5x10
+print(arr)
+print(arr[1:4]) #retorna elementos da segunda e terceira linha e quarta e quinta coluna
+
+arr2_= arr2.copy() #cria copia da matriz
+
+arr3 = arr2[0:3] #retorna primeira, segunda e terceira linha da matriz
+arr3[:] = 100 #atribui valor 100 a todos os elementos da matriz
+print(arr2) #printa matriz original
+print(arr3) #printa matriz copiada
+print(arr2_) #printa matriz copiada
+
+arr = np.arange(0, 20)
+print(arr + arr) #soma elementos
+np.mean(arr) #retorna media dos elementos
+np.std(arr) #retorna desvio padrao dos elementos
+np.var(arr) #retorna variancia dos elementos
+np.sqrt(arr) #retorna raiz quadrada dos elementos
+np.exp(arr) #retorna exponencial dos elementos
+np.max(arr) #retorna maior elemento
+np.min(arr) #retorna menor elemento
+np.sin(arr) #retorna seno dos elementos
+np.cos(arr) #retorna cosseno dos elementos
+np.tan(arr) #retorna tangente dos elementos 
+np.log(arr) #retorna logaritmo natural dos elementos
+np.log10(arr) #retorna logaritmo base 10 dos elementos
+np.log2(arr) #retorna logaritmo base 2 dos elementos
+np.log1p(arr) #retorna logaritmo natural de 1 + elementos
+
+
