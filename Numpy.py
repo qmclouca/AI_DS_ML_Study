@@ -20,5 +20,74 @@ print(matriz.max()) #retorna maior valor da matriz
 print(matriz.min()) #retorna menor valor da matriz
 print(matriz.argmax()) #retorna indice do maior valor da matriz
 print(matriz.argmin()) #retorna indice do menor valor da matriz
+print(matriz.dtype) #retorna tipo de dados da matriz
+print(matriz.sum()) #retorna soma dos elementos da matriz
+print(matriz.sum(axis=0)) #retorna soma dos elementos das colunas da matriz
+print(matriz.sum(axis=1)) #retorna soma dos elementos das linhas da matriz
+print(matriz.mean()) #retorna media dos elementos da matriz
+print(matriz.mean(axis=0)) #retorna media dos elementos das colunas da matriz
+print(matriz.mean(axis=1)) #retorna media dos elementos das linhas da matriz
+print(matriz.std()) #retorna desvio padrao dos elementos da matriz
+print(matriz.std(axis=0)) #retorna desvio padrao dos elementos das colunas da matriz
+print(matriz.std(axis=1)) #retorna desvio padrao dos elementos das linhas da matriz
+print(matriz.var()) #retorna variancia dos elementos da matriz
+print(matriz.var(axis=0)) #retorna variancia dos elementos das colunas da matriz
+print(matriz.var(axis=1)) #retorna variancia dos elementos das linhas da matriz
+print(matriz[0]) #retorna primeira linha da matriz
+print(matriz[0][0]) #retorna elemento da primeira linha e primeira coluna da matriz
+print(matriz[0,0]) #retorna elemento da primeira linha e primeira coluna da matriz
+print(matriz[0:2]) #retorna primeira e segunda linha da matriz
+print(matriz[0:2,0:2]) #retorna primeira e segunda linha e primeira e segunda coluna da matriz
+print(matriz[matriz>5]) #retorna elementos maiores que 5 da matriz
+print(matriz[matriz<5]) #retorna elementos menores que 5 da matriz
+print(matriz[matriz==5]) #retorna elementos iguais a 5 da matriz
+print(matriz[matriz!=5]) #retorna elementos diferentes de 5 da matriz
+print(matriz[matriz>=5]) #retorna elementos maiores ou iguais a 5 da matriz
+print(matriz[matriz<=5]) #retorna elementos menores ou iguais a 5 da matriz
+print(matriz[matriz%2==0]) #retorna elementos pares da matriz
+print(matriz[matriz%2!=0]) #retorna elementos impares da matriz
+print(matriz[matriz%2==1]) #retorna elementos impares da matriz
+
+mtzAleatoria = np.random.randint(0,100,25) #cria array de 25 numeros aleatorios entre 0 e 100
+mtzAleatoria_transposta = np.array(mtzAleatoria).T #transpose array
+print("matriz aleatoria: ")
+print(mtzAleatoria) 
+print("matriz aleatoria transposta: ")
+print(mtzAleatoria_transposta) #printa array transposto
+
+arr = np.arange(0, 30, 3)
+
+print(arr[3:5]) #retorna elementos 3 e 4
+print(arr[3:]) #retorna elementos a partir do 3
+print(arr[:3]) #retorna elementos ate o 3
+
+arr2 = np.arange(50).reshape((5, 10)) #cria matriz 5x10
+print(arr)
+print(arr[1:4]) #retorna elementos da segunda e terceira linha e quarta e quinta coluna
+
+arr2_= arr2.copy() #cria copia da matriz
+
+arr3 = arr2[0:3] #retorna primeira, segunda e terceira linha da matriz
+arr3[:] = 100 #atribui valor 100 a todos os elementos da matriz
+print(arr2) #printa matriz original
+print(arr3) #printa matriz copiada
+print(arr2_) #printa matriz copiada
+
+arr = np.arange(0, 20)
+print(arr + arr) #soma elementos
+np.mean(arr) #retorna media dos elementos
+np.std(arr) #retorna desvio padrao dos elementos
+np.var(arr) #retorna variancia dos elementos
+np.sqrt(arr) #retorna raiz quadrada dos elementos
+np.exp(arr) #retorna exponencial dos elementos
+np.max(arr) #retorna maior elemento
+np.min(arr) #retorna menor elemento
+np.sin(arr) #retorna seno dos elementos
+np.cos(arr) #retorna cosseno dos elementos
+np.tan(arr) #retorna tangente dos elementos 
+np.log(arr) #retorna logaritmo natural dos elementos
+np.log10(arr) #retorna logaritmo base 10 dos elementos
+np.log2(arr) #retorna logaritmo base 2 dos elementos
+np.log1p(arr) #retorna logaritmo natural de 1 + elementos
 
 
