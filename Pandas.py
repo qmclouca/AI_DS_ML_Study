@@ -16,3 +16,19 @@ serie2 = pd.Series([1,2,3,4], ['USA', 'Germany', 'USSR', 'Japan'])
 serie3 = pd.Series([1,2,5,4], ['USA', 'Germany', 'Italy', 'Japan'])
 
 print(serie2 + serie3);
+
+# DataFrames Creations and Slice
+
+np.random.seed(101)
+df = pd.DataFrame(np.random.randn(5,4),['A','B','C','D','E'],['W','X','Y','Z'])
+print(df)
+print(df['W'])
+print(df[['W','Z']])
+print(df.W)
+df['new'] = df['W'] + df['Y']
+print(df)
+df.drop('new', axis=1, inplace=True) # delete column
+print(df)
+print(df.loc['A', 'W']) # select row and column
+print(df.loc[['A', 'B'], ['W', 'Y']]) # select rows and columns
+print(df.iloc[1:4, 2:4]) # select rows and columns by index
