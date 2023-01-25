@@ -32,3 +32,12 @@ print(df)
 print(df.loc['A', 'W']) # select row and column
 print(df.loc[['A', 'B'], ['W', 'Y']]) # select rows and columns
 print(df.iloc[1:4, 2:4]) # select rows and columns by index
+print(df[df>0])
+print(df[df['W']>0]['Y'])
+print(df[(df['W']>0) & (df['Y']>1)])
+print(df[(df['W']>0) | (df['Y']>1)])
+print(df.reset_index())
+print(df.reset_index(inplace=True)) # inplace = True muda o dataframe original
+col = 'RS RJ SP AM SC'.split()
+df['Estado'] = col
+print(df)
