@@ -29,6 +29,19 @@ print(f"Base Salary variance is: {data['BasePay'].var()}")
 print(f"Base Salary max is: {data['BasePay'].max()}")
 print(f"Base Salary min is: {data['BasePay'].min()}")
 
+print(f"Overtime Salary mean is: {data['OvertimePay'].mean()}")
+print(f"Overtime Salary median is: {data['OvertimePay'].median()}")
+print(f"Overtime Salary standard deviation is: {data['OvertimePay'].std()}")
+print(f"Overtime Salary variance is: {data['OvertimePay'].var()}")
+print(f"Overtime Salary max is: {data['OvertimePay'].max()}")
+print(f"Overtime Salary min is: {data['OvertimePay'].min()}")
+
+print(data[data['EmployeeName'] =='JOSEPH DRISCOLL']['JobTitle'])
+print(data[data['EmployeeName'] =='JOSEPH DRISCOLL']['TotalPayBenefits'])
+
+print(data[data['TotalPayBenefits'] == data['TotalPayBenefits'].max()]['EmployeeName'])
+
+
 print(data.describe().T)
 
 
