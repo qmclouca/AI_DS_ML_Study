@@ -17,5 +17,8 @@ axes1.set_xlabel('X Label')
 axes1.set_ylabel('Y Label')
 axes1.set_title('Title')
 axes2.plot(y, x)
+axes2.set_xlabel('X Label')
+axes2.set_ylabel('Y Label')
+axes2.set_title('Title')
 
 # %%
