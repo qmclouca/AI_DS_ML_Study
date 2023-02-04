@@ -55,6 +55,4 @@ axes.legend(loc=0)
 
 fig.savefig('my_picture.png', dpi=200)
 
-
-
 # %%
