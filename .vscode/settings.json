@@ -1,0 +1,4 @@
+{
+    "diffEditor.maxFileSize": 500,
+    "notebook.output.textLineLimit": 10000
+}
