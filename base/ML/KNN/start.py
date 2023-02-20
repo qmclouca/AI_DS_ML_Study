@@ -57,5 +57,3 @@ print('\n')
 print(confusion_matrix(y_test, pred))
 print('\n')
 print(classification_report(y_test, pred))
-
-
