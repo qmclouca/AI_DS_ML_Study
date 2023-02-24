@@ -45,5 +45,3 @@ df.comp.head()
 
 plt.figure(figsize=(12,6))
 sns.heatmap(df.comp, cmap='plasma')
-
-
