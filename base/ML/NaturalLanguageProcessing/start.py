@@ -77,6 +77,48 @@ print(bow4.shape)
 
 #print(bow_transformer.get_feature_names()[9554])
 
+messages_bow = bow_transformer.transform(messages['message'])
+sparsity = (100.0 * messages_bow.nnz / (messages_bow.shape[0] * messages_bow.shape[1]))
+print('sparsity: {}'.format(sparsity))
+
+from sklearn.feature_extraction.text import TfidfTransformer
+
+tfidf_transformer = TfidfTransformer().fit(messages_bow)
+tfidf4 = tfidf_transformer.transform(bow4)
+print(tfidf4)
+print(tfidf_transformer.idf_[bow_transformer.vocabulary_['u']])
+print(tfidf_transformer.idf_[bow_transformer.vocabulary_['university']])
+messages_tfidf = tfidf_transformer.transform(messages_bow)
+print(messages_tfidf.shape)
+from sklearn.naive_bayes import MultinomialNB
+spam_detect_model = MultinomialNB().fit(messages_tfidf, messages['label'])
+print('predicted:', spam_detect_model.predict(tfidf4)[0])
+print('expected:', messages.label[3])
+
+from sklearn.model_selection import train_test_split
+
+msg_train, msg_test, label_train, label_test = \
+train_test_split(messages['message'], messages['label'], test_size=0.3)
+
+print(len(msg_train), len(msg_test), len(msg_train) + len(msg_test))
+
+from sklearn.pipeline import Pipeline
+
+pipeline = Pipeline([
+    ('bow', CountVectorizer(analyzer=text_process)),  # strings to token integer counts
+    ('tfidf', TfidfTransformer()),  # integer counts to weighted TF-IDF scores
+    ('classifier', MultinomialNB()),  # train on TF-IDF vectors w/ Naive Bayes classifier
+])
+
+pipeline.fit(msg_train,label_train)
+
+predictions = pipeline.predict(msg_test)
+
+from sklearn.metrics import classification_report
+print(classification_report(predictions,label_test))
+
+
+
 #%%
 
 
